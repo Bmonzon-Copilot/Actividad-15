@@ -46,9 +46,12 @@ def menu():
         match opcion:
             case "1":
                 print("\n--- MÁXIMO COMÚN DIVISOR ---")
-                a=int(input("Ingrese el primer numero: "))
-                b=int(input("Ingrese el segundo numero: "))
-                print(f"\nEl MCD de {a} y {b} es: {mcd(a, b)}\n")
+                try:
+                    a = int(input("Ingrese el primer número: "))
+                    b = int(input("Ingrese el segundo número: "))
+                    print(f"\nEl MCD de {a} y {b} es: {mcd(a, b)}\n")
+                except ValueError:
+                    print("\nError: Debe ingresar solo números enteros.\n")
             case "2":
                 print("\n--- REPETIR PALABRA ---")
                 palabra = input("Ingrese la palabra: ")
@@ -61,16 +64,20 @@ def menu():
                 print(f"\nLa letra '{letra}' aparece {cuenta_letras(cadena, letra)} veces.\n")
             case "4":
                 print("\n--- DECIMAL A BINARIO ---")
-                numero = int(input("Ingresa un número decimal: "))
-                print(f"\nBinario: {binario_decimal(numero)}\n")
+                try:
+                    numero = int(input("Ingresa un número decimal: "))
+                    print(f"\nBinario: {binario_decimal(numero)}\n")
+                except ValueError:
+                    print("\nError: Debe ingresar solo números enteros.\n")
             case "5":
                 print("\n--- CANTIDAD DE DÍGITOS ---")
-                numero = int(input("Ingrese un número: "))
-                print(f"\nEl número tiene {calcula_digitos(numero)} dígitos.\n")
+                try:
+                    numero = int(input("Ingrese un número: "))
+                    print(f"\nEl número tiene {calcula_digitos(numero)} dígitos.\n")
+                except ValueError:
+                    print("\nError: Debe ingresar solo números enteros.\n")
             case "6":
                 print("\n¡Gracias por usar el programa! Hasta luego.\n")
                 break
-            case _:
-                print("Opción no válida. Intente de nuevo.")
 
 menu()
